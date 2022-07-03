@@ -82,6 +82,17 @@ jobs:
 #       if: always()
 
 
+    - name: dir1
+      run: ls buildSrc
+
+
+    - name: dir2
+      run: pwd   
+
+
+    - name: dir3
+      run: sudo apt install tree;tree apk;tree /apk;tree . 
+
 
 #Start the build process
     - name: Build with Gradle
@@ -111,3 +122,21 @@ jobs:
 #         channel: '#notif-jenkins'
 #         message: uploaded the artifact.
 #       if: always()
+
+
+    - name: dir1
+      run: tree  /home/runner/work/field-staff-app/field-staff-app/buildSrc
+
+
+    - name: dir2
+      run: tree  /home/runner/work/field-staff-app/field-staff-app/
+
+    - name: dir3
+      run: tree  /home/runner/work/field-staff-app/field-staff-app/app
+
+
+    - name: dir4
+      run: tree  /home/runner/work/field-staff-app/field-staff-app/gradle   
+    
+    - name: dir5
+      run: tree  /home/runner/work/field-staff-app/field-staff-app/build  
