@@ -80,7 +80,8 @@ jobs:
         path: /home/runner/work/field-staff-app/field-staff-app/appMarketplace/build/outputs/
 
 
-
+    - name: dir0
+      run: tree .
 
     - name: dir1
       run: tree  /home/runner/work/field-staff-app/field-staff-app/buildSrc
