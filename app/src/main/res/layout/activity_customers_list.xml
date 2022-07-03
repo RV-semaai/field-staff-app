@@ -1,0 +1,714 @@
+<?xml version="1.0" encoding="utf-8"?>
+
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools">
+
+    <data>
+
+        <variable
+            name="CustomerViewModel"
+            type="com.semaai.agent.viewmodel.existingcustomers.CustomersViewModel" />
+
+        <variable
+            name="ProvinceAdaptor"
+            type="com.semaai.agent.adapter.newCustomers.ProvinceAdaptor" />
+
+
+        <variable
+            name="DistrictAdaptor"
+            type="com.semaai.agent.adapter.newCustomers.DistrictAdaptor" />
+
+        <variable
+            name="CountyAdaptor"
+            type="com.semaai.agent.adapter.newCustomers.CountyAdaptor" />
+
+        <variable
+            name="VillageAdaptor"
+            type="com.semaai.agent.adapter.newCustomers.VillageAdaptor" />
+
+        <!--        <variable-->
+        <!--            name="CustomerSortAdapter"-->
+        <!--            type="com.android.seemai.adapter.existingCustomers.CustomerSortAdapter" />-->
+
+    </data>
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:background="@color/white"
+        tools:context=".activity.existingcustomers.CustomersListActivity">
+
+        <androidx.constraintlayout.widget.ConstraintLayout
+            android:id="@+id/cl"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent">
+
+            <androidx.constraintlayout.widget.ConstraintLayout
+                android:id="@+id/cl_top"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                app:layout_constraintTop_toTopOf="parent">
+
+                <include
+                    android:id="@+id/cl_title"
+                    layout="@layout/toplayout"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content" />
+
+            </androidx.constraintlayout.widget.ConstraintLayout>
+
+            <androidx.constraintlayout.widget.ConstraintLayout
+                android:id="@+id/cl_listingLayout"
+                android:layout_width="match_parent"
+                android:layout_height="0dp"
+                app:layout_constraintBottom_toTopOf="@id/cm_bottom"
+                app:layout_constraintTop_toBottomOf="@id/cl_top">
+
+                <androidx.constraintlayout.widget.ConstraintLayout
+                    android:id="@+id/cl_bottomLayout"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginHorizontal="20dp"
+                    android:layout_marginTop="@dimen/_5sdp"
+                    app:layout_constraintTop_toTopOf="parent">
+
+                    <androidx.cardview.widget.CardView
+                        android:id="@+id/cv_myCustomer"
+                        android:layout_width="0dp"
+                        android:layout_height="@dimen/_40sdp"
+                        android:layout_margin="@dimen/_2sdp"
+                        app:cardBackgroundColor="@color/button_bg"
+                        app:cardCornerRadius="@dimen/_5sdp"
+                        app:cardElevation="@dimen/_4sdp"
+                        app:layout_constraintBottom_toBottomOf="parent"
+                        app:layout_constraintEnd_toStartOf="@id/cv_otherCustomer"
+                        app:layout_constraintStart_toStartOf="parent"
+                        app:layout_constraintTop_toTopOf="parent">
+
+                        <TextView
+                            android:id="@+id/tv_myCustomerText"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_gravity="center"
+                            android:fontFamily="@font/open_sans"
+                            android:singleLine="true"
+                            android:text="@string/myCustomers"
+                            android:textColor="@color/white"
+                            android:textSize="@dimen/_14sdp" />
+                    </androidx.cardview.widget.CardView>
+
+                    <androidx.cardview.widget.CardView
+                        android:id="@+id/cv_otherCustomer"
+                        android:layout_width="0dp"
+                        android:layout_height="@dimen/_40sdp"
+                        android:layout_margin="@dimen/_2sdp"
+                        app:cardBackgroundColor="@color/white"
+                        app:cardCornerRadius="@dimen/_5sdp"
+                        app:cardElevation="@dimen/_4sdp"
+                        app:layout_constraintBottom_toBottomOf="parent"
+                        app:layout_constraintEnd_toEndOf="parent"
+                        app:layout_constraintStart_toEndOf="@id/cv_myCustomer"
+                        app:layout_constraintTop_toTopOf="parent">
+
+                        <TextView
+                            android:id="@+id/tv_otherCustomerText"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_gravity="center"
+                            android:fontFamily="@font/open_sans"
+                            android:singleLine="true"
+                            android:text="@string/otherCustomers"
+                            android:textColor="@color/black"
+                            android:textSize="@dimen/_14sdp" />
+                    </androidx.cardview.widget.CardView>
+                </androidx.constraintlayout.widget.ConstraintLayout>
+                                <androidx.cardview.widget.CardView
+                    android:id="@+id/cv_sortByCard"
+                    android:layout_width="@dimen/_125sdp"
+                    android:layout_height="@dimen/_40sdp"
+                    android:layout_marginLeft="@dimen/_20sdp"
+                    android:layout_marginTop="@dimen/_10sdp"
+                    android:backgroundTint="@color/white"
+                    app:cardCornerRadius="@dimen/_4sdp"
+                    app:cardElevation="@dimen/_4sdp"
+                    app:layout_constraintLeft_toLeftOf="parent"
+                    app:layout_constraintTop_toBottomOf="@id/cl_bottomLayout">
+
+                    <androidx.constraintlayout.widget.ConstraintLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="match_parent">
+
+                        <TextView
+                            android:id="@+id/tv_sortBy"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:layout_marginStart="@dimen/_10sdp"
+                            android:layout_marginEnd="@dimen/_20sdp"
+                            android:fontFamily="@font/open_sans"
+                            android:singleLine="true"
+                            android:text="@string/sort"
+                            android:textColor="@color/button_bg"
+                            android:textSize="@dimen/_13sdp"
+                            app:layout_constraintBottom_toBottomOf="parent"
+                            app:layout_constraintLeft_toLeftOf="parent"
+                            app:layout_constraintTop_toTopOf="parent" />
+
+
+                        <ImageView
+                            android:id="@+id/iv_myCustomerArrowDown"
+                            android:layout_width="@dimen/_14sdp"
+                            android:layout_height="@dimen/_14sdp"
+                            android:layout_marginEnd="@dimen/_13sdp"
+                            android:src="@drawable/ic_vector_down"
+                            app:layout_constraintBottom_toBottomOf="parent"
+                            app:layout_constraintRight_toRightOf="parent"
+                            app:layout_constraintTop_toTopOf="parent" />
+
+
+                        <ImageView
+                            android:id="@+id/iv_myCustomerArrowUp"
+                            android:layout_width="@dimen/_14sdp"
+                            android:layout_height="@dimen/_14sdp"
+                            android:layout_marginEnd="@dimen/_13sdp"
+                            android:src="@drawable/ic_vector_up"
+                            android:visibility="gone"
+                            app:layout_constraintBottom_toBottomOf="parent"
+                            app:layout_constraintRight_toRightOf="parent"
+                            app:layout_constraintTop_toTopOf="parent" />
+
+
+                    </androidx.constraintlayout.widget.ConstraintLayout>
+
+                </androidx.cardview.widget.CardView>
+
+                <androidx.cardview.widget.CardView
+                    android:id="@+id/cv_sortByList"
+                    android:layout_width="@dimen/_125sdp"
+                    android:layout_height="@dimen/_55sdp"
+                    android:layout_marginVertical="@dimen/_5sdp"
+                    android:layout_marginStart="@dimen/_20sdp"
+                    android:backgroundTint="@color/white"
+                    android:visibility="gone"
+                    app:cardCornerRadius="5dp"
+                    app:cardElevation="4dp"
+                    app:layout_constraintLeft_toLeftOf="parent"
+                    app:layout_constraintTop_toBottomOf="@id/cv_sortByCard">
+
+                    <RelativeLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_gravity="center">
+
+                        <TextView
+                            android:id="@+id/tv_nameAZ"
+                            android:layout_width="match_parent"
+                            android:layout_height="@dimen/_25sdp"
+                            android:layout_marginHorizontal="@dimen/_12sdp"
+                            android:fontFamily="@font/open_sans"
+                            android:gravity="center_vertical"
+                            android:text="@string/nameAz"
+                            android:textColor="@color/button_bg"
+                            android:textSize="@dimen/_13sdp" />
+
+                        <View
+                            android:layout_width="match_parent"
+                            android:layout_height="0.7dp"
+                            android:layout_below="@id/tv_nameAZ"
+                            android:background="@color/line_bg1" />
+
+                        <TextView
+                            android:id="@+id/tv_nameZA"
+                            android:layout_width="match_parent"
+                            android:layout_height="@dimen/_25sdp"
+                            android:layout_below="@id/tv_nameAZ"
+                            android:layout_marginHorizontal="@dimen/_12sdp"
+                            android:fontFamily="@font/open_sans"
+                            android:gravity="center_vertical"
+                            android:text="@string/nameZa"
+                            android:textColor="@color/button_bg"
+                            android:textSize="@dimen/_13sdp" />
+
+                    </RelativeLayout>
+
+                </androidx.cardview.widget.CardView>
+
+                <androidx.constraintlayout.widget.ConstraintLayout
+                    android:id="@+id/cl_filter"
+                    android:layout_width="wrap_content"
+                    android:layout_height="@dimen/_40sdp"
+                    android:layout_marginLeft="@dimen/_20sdp"
+                    android:layout_marginTop="@dimen/_10sdp"
+                    app:layout_constraintRight_toRightOf="parent"
+                    app:layout_constraintTop_toBottomOf="@id/cl_bottomLayout">
+
+                    <ImageView
+                        android:id="@+id/iv_filterIconExisting"
+                        android:layout_width="@dimen/_20sdp"
+                        android:layout_height="@dimen/_20sdp"
+                        android:layout_marginEnd="@dimen/_7sdp"
+                        android:src="@drawable/ic_vector_filter"
+                        app:layout_constraintBottom_toBottomOf="parent"
+                        app:layout_constraintRight_toLeftOf="@id/tv_filterText"
+                        app:layout_constraintTop_toTopOf="parent" />
+
+
+                    <TextView
+                        android:id="@+id/tv_filterText"
+                        android:layout_width="wrap_content"
+                        android:layout_height="@dimen/_20sdp"
+                        android:layout_marginEnd="@dimen/_20sdp"
+                        android:fontFamily="@font/open_sans"
+                        android:text="@string/filter"
+                        android:textColor="@color/button_bg"
+                        android:textSize="@dimen/_14sdp"
+                        app:layout_constraintBottom_toBottomOf="parent"
+                        app:layout_constraintRight_toRightOf="parent"
+                        app:layout_constraintTop_toTopOf="parent" />
+
+                </androidx.constraintlayout.widget.ConstraintLayout>
+
+                <View
+                    android:id="@+id/viewLine"
+                    android:layout_width="match_parent"
+                    android:layout_height="0.7dp"
+                    android:layout_marginHorizontal="@dimen/_20sdp"
+                    android:layout_marginTop="@dimen/_10sdp"
+                    android:background="@color/line_bg"
+                    app:layout_constraintTop_toBottomOf="@id/cv_sortByCard" />
+
+                <androidx.constraintlayout.widget.ConstraintLayout
+                    android:id="@+id/cl_list"
+                    android:layout_width="match_parent"
+                    android:layout_height="0dp"
+                    app:layout_constraintBottom_toBottomOf="parent"
+                    app:layout_constraintTop_toBottomOf="@+id/viewLine">
+
+                    <androidx.recyclerview.widget.RecyclerView
+                        android:id="@+id/rv_customerListData"
+                        android:layout_width="match_parent"
+                        android:layout_height="match_parent"
+                        android:layout_marginHorizontal="@dimen/_20sdp"
+                        android:layout_marginTop="@dimen/_5sdp" />
+
+                    <TextView
+                        android:id="@+id/tv_noRecord"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:fontFamily="@font/open_sans"
+                        android:text="@string/noRecord"
+                        android:textColor="@color/black"
+                        android:textSize="@dimen/_20sdp"
+                        android:visibility="gone"
+                        app:layout_constraintBottom_toBottomOf="parent"
+                        app:layout_constraintLeft_toLeftOf="parent"
+                        app:layout_constraintRight_toRightOf="parent"
+                        app:layout_constraintTop_toTopOf="parent" />
+
+                </androidx.constraintlayout.widget.ConstraintLayout>
+
+                <androidx.cardview.widget.CardView
+                    android:id="@+id/cl_filterList"
+                    android:layout_width="wrap_content"
+                    android:layout_height="0dp"
+                    android:visibility="gone"
+                    app:cardBackgroundColor="@color/white"
+                    app:cardElevation="@dimen/_10sdp"
+                    app:layout_constraintBottom_toBottomOf="parent"
+                    app:layout_constraintRight_toRightOf="parent"
+                    app:layout_constraintTop_toBottomOf="@id/cl_filter">
+
+                    <androidx.constraintlayout.widget.ConstraintLayout
+                        android:layout_width="@dimen/_150sdp"
+                        android:layout_height="match_parent"
+                        app:layout_constraintBottom_toBottomOf="parent"
+                        app:layout_constraintRight_toRightOf="parent"
+                        app:layout_constraintTop_toBottomOf="@id/cl_filter">
+
+                        <androidx.core.widget.NestedScrollView
+                            android:layout_width="match_parent"
+                            android:layout_height="0dp"
+                            android:layout_marginBottom="@dimen/_10sdp"
+                            app:layout_constraintBottom_toTopOf="@id/cv_apply"
+                            app:layout_constraintTop_toTopOf="parent">
+
+                            <androidx.constraintlayout.widget.ConstraintLayout
+                                android:layout_width="match_parent"
+                                android:layout_height="match_parent">
+
+                                <androidx.cardview.widget.CardView
+                                    android:id="@+id/provinceCard"
+                                    android:layout_width="match_parent"
+                                    android:layout_height="wrap_content"
+                                    android:layout_marginHorizontal="@dimen/_10sdp"
+                                    android:layout_marginTop="@dimen/_5sdp"
+                                    android:backgroundTint="@color/white"
+                                    app:cardCornerRadius="@dimen/_5sdp"
+                                    app:cardElevation="@dimen/_4sdp"
+                                    app:layout_constraintTop_toTopOf="parent">
+
+                                    <androidx.constraintlayout.widget.ConstraintLayout
+                                        android:layout_width="match_parent"
+                                        android:layout_height="match_parent">
+
+                                        <androidx.constraintlayout.widget.ConstraintLayout
+                                            android:id="@+id/cl_filterProvincePack"
+                                            android:layout_width="match_parent"
+                                            android:layout_height="@dimen/_40sdp"
+                                            app:layout_constraintTop_toTopOf="parent">
+
+                                            <TextView
+                                                android:id="@+id/tv_province"
+                                                android:layout_width="match_parent"
+                                                android:layout_height="match_parent"
+                                                android:layout_marginLeft="@dimen/_8sdp"
+                                                android:layout_marginEnd="@dimen/_20sdp"
+                                                android:fontFamily="@font/open_sans"
+                                                android:gravity="center|left"
+                                                android:lastBaselineToBottomHeight="@dimen/_2sdp"
+                                                android:singleLine="true"
+                                                android:text="@string/province"
+                                                android:textColor="@color/button_bg"
+                                                android:textSize="@dimen/_12sdp"
+                                                app:layout_constraintLeft_toLeftOf="parent"
+                                                app:layout_constraintTop_toTopOf="parent" />
+
+                                            <ImageView
+                                                android:id="@+id/iv_provinceDownIcon"
+                                                android:layout_width="@dimen/_10sdp"
+                                                android:layout_height="@dimen/_10sdp"
+                                                android:layout_centerVertical="true"
+                                                android:layout_marginEnd="@dimen/_10sdp"
+                                                android:src="@drawable/ic_vector_down"
+                                                app:layout_constraintBottom_toBottomOf="parent"
+                                                app:layout_constraintRight_toRightOf="parent"
+                                                app:layout_constraintTop_toTopOf="parent" />
+
+
+                                            <ImageView
+                                                android:id="@+id/iv_provinceUpIcon"
+                                                android:layout_width="@dimen/_10sdp"
+                                                android:layout_height="@dimen/_10sdp"
+                                                android:layout_centerVertical="true"
+                                                android:layout_marginEnd="@dimen/_10sdp"
+                                                android:src="@drawable/ic_vector_up"
+                                                android:visibility="gone"
+                                                app:layout_constraintBottom_toBottomOf="parent"
+                                                app:layout_constraintRight_toRightOf="parent"
+                                                app:layout_constraintTop_toTopOf="parent" />
+
+
+                                        </androidx.constraintlayout.widget.ConstraintLayout>
+
+                                        <androidx.recyclerview.widget.RecyclerView
+                                            android:id="@+id/rv_provinceList"
+                                            android:layout_width="match_parent"
+                                            android:layout_height="wrap_content"
+                                            android:adapter="@{ProvinceAdaptor}"
+                                            android:nestedScrollingEnabled="true"
+                                            android:visibility="gone"
+                                            app:layout_constraintHeight_max="@dimen/_150sdp"
+                                            app:layout_constraintTop_toBottomOf="@+id/cl_filterProvincePack" />
+
+                                    </androidx.constraintlayout.widget.ConstraintLayout>
+                                </androidx.cardview.widget.CardView>
+
+                                <androidx.cardview.widget.CardView
+                                    android:id="@+id/districtCard"
+                                    android:layout_width="match_parent"
+                                    android:layout_height="wrap_content"
+                                    android:layout_marginHorizontal="@dimen/_10sdp"
+                                    android:layout_marginTop="@dimen/_5sdp"
+                                    android:backgroundTint="@color/white"
+                                    app:cardCornerRadius="@dimen/_5sdp"
+                                    app:cardElevation="@dimen/_4sdp"
+                                    app:layout_constraintTop_toBottomOf="@id/provinceCard">
+
+                                    <androidx.constraintlayout.widget.ConstraintLayout
+                                        android:layout_width="match_parent"
+                                        android:layout_height="match_parent">
+
+                                        <androidx.constraintlayout.widget.ConstraintLayout
+                                            android:id="@+id/cl_filterDistrictPack"
+                                            android:layout_width="match_parent"
+                                            android:layout_height="@dimen/_40sdp"
+                                            app:layout_constraintTop_toTopOf="parent">
+
+                                            <TextView
+                                                android:id="@+id/tv_district"
+                                                android:layout_width="match_parent"
+                                                android:layout_height="match_parent"
+                                                android:layout_marginStart="@dimen/_8sdp"
+                                                android:layout_marginLeft="@dimen/_8sdp"
+                                                android:layout_marginEnd="@dimen/_20sdp"
+                                                android:fontFamily="@font/open_sans"
+                                                android:gravity="center|left"
+                                                android:singleLine="true"
+                                                android:text="@string/district"
+                                                android:textColor="@color/button_bg"
+                                                android:textSize="@dimen/_12sdp"
+                                                app:layout_constraintBottom_toBottomOf="parent"
+                                                app:layout_constraintLeft_toLeftOf="parent"
+                                                app:layout_constraintTop_toTopOf="parent" />
+
+                                            <ImageView
+                                                android:id="@+id/iv_districtDownIcon"
+                                                android:layout_width="@dimen/_10sdp"
+                                                android:layout_height="@dimen/_10sdp"
+                                                android:layout_centerVertical="true"
+                                                android:layout_marginEnd="@dimen/_10sdp"
+                                                android:src="@drawable/ic_vector_down"
+                                                app:layout_constraintBottom_toBottomOf="parent"
+                                                app:layout_constraintRight_toRightOf="parent"
+                                                app:layout_constraintTop_toTopOf="parent">
+
+                                            </ImageView>
+
+                                            <ImageView
+                                                android:id="@+id/iv_districtUpIcon"
+                                                android:layout_width="@dimen/_10sdp"
+                                                android:layout_height="@dimen/_10sdp"
+                                                android:layout_centerVertical="true"
+                                                android:layout_marginEnd="@dimen/_10sdp"
+                                                android:src="@drawable/ic_vector_up"
+                                                android:visibility="gone"
+                                                app:layout_constraintBottom_toBottomOf="parent"
+                                                app:layout_constraintRight_toRightOf="parent"
+                                                app:layout_constraintTop_toTopOf="parent">
+
+                                            </ImageView>
+                                        </androidx.constraintlayout.widget.ConstraintLayout>
+
+                                        <androidx.recyclerview.widget.RecyclerView
+                                            android:id="@+id/rv_districtList"
+                                            android:layout_width="match_parent"
+                                            android:layout_height="wrap_content"
+                                            android:adapter="@{DistrictAdaptor}"
+                                            android:nestedScrollingEnabled="true"
+                                            android:visibility="gone"
+                                            app:layout_constraintHeight_max="@dimen/_150sdp"
+                                            app:layout_constraintTop_toBottomOf="@+id/cl_filterDistrictPack" />
+
+                                    </androidx.constraintlayout.widget.ConstraintLayout>
+
+                                </androidx.cardview.widget.CardView>
+
+                                <androidx.cardview.widget.CardView
+                                    android:id="@+id/subDistrictCard"
+                                    android:layout_width="match_parent"
+                                    android:layout_height="wrap_content"
+                                    android:layout_marginHorizontal="@dimen/_10sdp"
+                                    android:layout_marginTop="@dimen/_5sdp"
+                                    android:backgroundTint="@color/white"
+                                    app:cardCornerRadius="@dimen/_5sdp"
+                                    app:cardElevation="@dimen/_4sdp"
+                                    app:layout_constraintTop_toBottomOf="@id/districtCard">
+
+                                    <androidx.constraintlayout.widget.ConstraintLayout
+                                        android:layout_width="match_parent"
+                                        android:layout_height="match_parent">
+
+                                        <androidx.constraintlayout.widget.ConstraintLayout
+                                            android:id="@+id/cl_filterSubDistrictPack"
+                                            android:layout_width="match_parent"
+                                            android:layout_height="@dimen/_40sdp"
+                                            app:layout_constraintTop_toTopOf="parent">
+
+                                            <TextView
+                                                android:id="@+id/tv_SubDistrict"
+                                                android:layout_width="match_parent"
+                                                android:layout_height="match_parent"
+                                                android:layout_marginLeft="@dimen/_8sdp"
+                                                android:layout_marginEnd="@dimen/_20sdp"
+                                                android:fontFamily="@font/open_sans"
+                                                android:gravity="center|left"
+                                                android:singleLine="true"
+                                                android:text="@string/subDistrict"
+                                                android:textColor="@color/button_bg"
+                                                android:textSize="@dimen/_12sdp"
+                                                app:layout_constraintBottom_toBottomOf="parent"
+                                                app:layout_constraintLeft_toLeftOf="parent"
+                                                app:layout_constraintTop_toTopOf="parent" />
+
+                                            <ImageView
+                                                android:id="@+id/iv_subDistrictDownIcon"
+                                                android:layout_width="@dimen/_10sdp"
+                                                android:layout_height="@dimen/_10sdp"
+                                                android:layout_centerVertical="true"
+                                                android:layout_marginEnd="@dimen/_10sdp"
+                                                android:src="@drawable/ic_vector_down"
+                                                app:layout_constraintBottom_toBottomOf="parent"
+                                                app:layout_constraintRight_toRightOf="parent"
+                                                app:layout_constraintTop_toTopOf="parent">
+
+                                            </ImageView>
+
+                                            <ImageView
+                                                android:id="@+id/iv_subDistrictUpIcon"
+                                                android:layout_width="@dimen/_10sdp"
+                                                android:layout_height="@dimen/_10sdp"
+                                                android:layout_centerVertical="true"
+                                                android:layout_marginEnd="@dimen/_10sdp"
+                                                android:src="@drawable/ic_vector_up"
+                                                android:visibility="gone"
+                                                app:layout_constraintBottom_toBottomOf="parent"
+                                                app:layout_constraintRight_toRightOf="parent"
+                                                app:layout_constraintTop_toTopOf="parent">
+
+                                            </ImageView>
+
+                                        </androidx.constraintlayout.widget.ConstraintLayout>
+
+                                        <androidx.recyclerview.widget.RecyclerView
+                                            android:id="@+id/rv_countyList"
+                                            android:layout_width="match_parent"
+                                            android:layout_height="wrap_content"
+                                            android:adapter="@{CountyAdaptor}"
+                                            android:nestedScrollingEnabled="true"
+                                            android:visibility="gone"
+                                            app:layout_constraintHeight_max="@dimen/_150sdp"
+                                            app:layout_constraintTop_toBottomOf="@id/cl_filterSubDistrictPack" />
+
+                                    </androidx.constraintlayout.widget.ConstraintLayout>
+
+                                </androidx.cardview.widget.CardView>
+
+                                <androidx.cardview.widget.CardView
+                                    android:id="@+id/villageCard"
+                                    android:layout_width="match_parent"
+                                    android:layout_height="wrap_content"
+                                    android:layout_marginHorizontal="@dimen/_10sdp"
+                                    android:layout_marginTop="@dimen/_5sdp"
+                                    android:layout_marginBottom="@dimen/_5sdp"
+                                    android:backgroundTint="@color/white"
+                                    app:cardCornerRadius="@dimen/_5sdp"
+                                    app:cardElevation="@dimen/_4sdp"
+                                    app:layout_constraintBottom_toBottomOf="parent"
+                                    app:layout_constraintTop_toBottomOf="@id/subDistrictCard">
+
+
+                                    <androidx.constraintlayout.widget.ConstraintLayout
+                                        android:layout_width="match_parent"
+                                        android:layout_height="match_parent">
+
+                                        <androidx.constraintlayout.widget.ConstraintLayout
+                                            android:id="@+id/cl_filterVillagePack"
+                                            android:layout_width="match_parent"
+                                            android:layout_height="@dimen/_40sdp"
+                                            app:layout_constraintTop_toTopOf="parent">
+
+                                            <TextView
+                                                android:id="@+id/tv_village"
+                                                android:layout_width="match_parent"
+                                                android:layout_height="match_parent"
+                                                android:layout_marginLeft="@dimen/_8sdp"
+                                                android:layout_marginEnd="@dimen/_20sdp"
+                                                android:fontFamily="@font/open_sans"
+                                                android:gravity="center|left"
+                                                android:singleLine="true"
+                                                android:text="@string/village"
+                                                android:textColor="@color/button_bg"
+                                                android:textSize="@dimen/_12sdp"
+                                                app:layout_constraintBottom_toBottomOf="parent"
+                                                app:layout_constraintLeft_toLeftOf="parent"
+                                                app:layout_constraintTop_toTopOf="parent" />
+
+                                            <ImageView
+                                                android:id="@+id/iv_villageDownIcon"
+                                                android:layout_width="@dimen/_10sdp"
+                                                android:layout_height="@dimen/_10sdp"
+                                                android:layout_centerVertical="true"
+                                                android:layout_marginEnd="@dimen/_10sdp"
+                                                android:src="@drawable/ic_vector_down"
+                                                app:layout_constraintBottom_toBottomOf="parent"
+                                                app:layout_constraintRight_toRightOf="parent"
+                                                app:layout_constraintTop_toTopOf="parent">
+
+                                            </ImageView>
+
+                                            <ImageView
+                                                android:id="@+id/iv_villageUpIcon"
+                                                android:layout_width="@dimen/_10sdp"
+                                                android:layout_height="@dimen/_10sdp"
+                                                android:layout_centerVertical="true"
+                                                android:layout_marginEnd="@dimen/_10sdp"
+                                                android:src="@drawable/ic_vector_up"
+                                                android:visibility="gone"
+                                                app:layout_constraintBottom_toBottomOf="parent"
+                                                app:layout_constraintRight_toRightOf="parent"
+                                                app:layout_constraintTop_toTopOf="parent">
+
+                                            </ImageView>
+
+                                        </androidx.constraintlayout.widget.ConstraintLayout>
+
+                                        <androidx.recyclerview.widget.RecyclerView
+                                            android:id="@+id/rv_villageList"
+                                            android:layout_width="match_parent"
+                                            android:layout_height="wrap_content"
+                                            android:adapter="@{VillageAdaptor}"
+                                            android:nestedScrollingEnabled="true"
+                                            android:visibility="gone"
+                                            app:layout_constraintHeight_max="@dimen/_150sdp"
+                                            app:layout_constraintTop_toBottomOf="@+id/cl_filterVillagePack" />
+                                    </androidx.constraintlayout.widget.ConstraintLayout>
+                                </androidx.cardview.widget.CardView>
+
+                            </androidx.constraintlayout.widget.ConstraintLayout>
+
+                        </androidx.core.widget.NestedScrollView>
+
+                        <androidx.cardview.widget.CardView
+                            android:id="@+id/cv_apply"
+                            android:layout_width="match_parent"
+                            android:layout_height="@dimen/_38sdp"
+                            android:layout_marginLeft="@dimen/_10sdp"
+                            android:layout_marginRight="@dimen/_10sdp"
+                            android:layout_marginBottom="@dimen/_10sdp"
+                            android:backgroundTint="@color/button_bg"
+                            app:cardCornerRadius="@dimen/_5sdp"
+                            app:cardElevation="@dimen/_2sdp"
+                            app:layout_constraintBottom_toBottomOf="parent">
+
+                            <androidx.constraintlayout.widget.ConstraintLayout
+                                android:layout_width="match_parent"
+                                android:layout_height="match_parent">
+
+                                <TextView
+                                    android:layout_width="wrap_content"
+                                    android:layout_height="35dp"
+                                    android:layout_gravity="center"
+                                    android:fontFamily="@font/open_sans_bold"
+                                    android:text="@string/apply"
+                                    android:textColor="@color/white"
+                                    android:textSize="25sp"
+                                    app:layout_constraintBottom_toBottomOf="parent"
+                                    app:layout_constraintLeft_toLeftOf="parent"
+                                    app:layout_constraintRight_toRightOf="parent"
+                                    app:layout_constraintTop_toTopOf="parent">
+                                    app:layout_constraintTop_toTopOf="parent"
+                                    android:textColor="@color/white"
+                                    android:textSize="23sp">
+
+                                </TextView>
+                            </androidx.constraintlayout.widget.ConstraintLayout>
+                        </androidx.cardview.widget.CardView>
+
+                    </androidx.constraintlayout.widget.ConstraintLayout>
+
+                </androidx.cardview.widget.CardView>
+
+            </androidx.constraintlayout.widget.ConstraintLayout>
+
+            <include
+                android:id="@+id/cm_bottom"
+                layout="@layout/bottom_menu"
+                app:layout_constraintBottom_toBottomOf="parent" />
+
+
+        </androidx.constraintlayout.widget.ConstraintLayout>
+
+
+    </androidx.constraintlayout.widget.ConstraintLayout>
+
+</layout>

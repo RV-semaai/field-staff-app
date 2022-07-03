@@ -1,0 +1,141 @@
+<?xml version="1.0" encoding="utf-8"?>
+<manifest xmlns:android="http://schemas.android.com/apk/res/android"
+    package="com.semaai.agent">
+
+    <uses-permission android:name="android.permission.READ_EXTERNAL_STORAGE" />
+    <uses-permission android:name="android.permission.WRITE_EXTERNAL_STORAGE" />
+    <uses-permission android:name="android.permission.CAMERA" />
+    <uses-permission android:name="android.permission.ACCESS_FINE_LOCATION" />
+    <uses-permission android:name="android.permission.ACCESS_COARSE_LOCATION" />
+    <uses-permission android:name="android.permission.INTERNET" />
+
+    <application
+        android:allowBackup="false"
+        android:icon="@mipmap/ic_launcher"
+        android:label="@string/appName"
+        android:largeHeap="true"
+        android:requestLegacyExternalStorage="true"
+        android:roundIcon="@mipmap/ic_launcher"
+        android:supportsRtl="true"
+        android:theme="@style/Theme.Seemai">
+        <activity
+            android:name=".activity.login.AccountDashboardActivity"
+            android:exported="false" />
+        <activity
+            android:name=".activity.targettracking.TotalInvoicedActivity"
+            android:exported="false" />
+        <activity
+            android:name=".activity.targettracking.MyTargetActivity"
+            android:exported="false" />
+        <activity
+            android:name=".activity.targettracking.TeamTargetActivity"
+            android:exported="false" />
+        <activity
+            android:name=".activity.targettracking.TargetTrackingDashboardActivity"
+            android:exported="false" />
+        <activity
+            android:name="com.semaai.agent.activity.clockinout.SucceedActivity"
+            android:exported="false" />
+        <activity
+            android:name="com.semaai.agent.activity.clockinout.StorePhotoAndGPSActivity"
+            android:exported="false" />
+        <activity
+            android:name="com.semaai.agent.activity.clockinout.NewCustomerActivity"
+            android:exported="false" />
+        <activity
+            android:name="com.semaai.agent.activity.clockinout.OthersActivity"
+            android:exported="false" />
+        <activity
+            android:name="com.semaai.agent.activity.clockinout.ClockDashboardActivity"
+            android:exported="false" />
+        <activity
+            android:name=".activity.login.AccountActivity"
+            android:exported="false" />
+        <activity
+            android:name="com.semaai.agent.activity.payment.PaymentStatusActivity"
+            android:exported="true" />
+        <activity
+            android:name="com.semaai.agent.activity.order.PastOrderDetailsActivity"
+            android:exported="true" />
+        <activity
+            android:name="com.semaai.agent.activity.CropActivity"
+            android:exported="false" />
+        <activity
+            android:name="com.semaai.agent.activity.ShowImageActivity"
+            android:exported="false" />
+        <activity
+            android:name="com.semaai.agent.activity.order.OrdersListActivity"
+            android:exported="true" />
+        <activity
+            android:name="com.semaai.agent.activity.existingcustomers.CustomerEditSaveActivity"
+            android:exported="false" />
+        <activity
+            android:name="com.semaai.agent.activity.existingcustomers.CustomersProfileUpdateActivity"
+            android:exported="false" />
+        <activity
+            android:name="com.semaai.agent.activity.existingcustomers.CustomersProfileDetailActivity"
+            android:exported="false" />
+        <activity
+            android:name="com.semaai.agent.activity.existingcustomers.MyCustomersActivity"
+            android:exported="false" />
+        <activity
+            android:name="com.semaai.agent.activity.existingcustomers.CustomersListActivity"
+            android:exported="true" />
+        <activity
+            android:name="com.semaai.agent.activity.newcustomer.GPSViewActivity"
+            android:exported="false" />
+        <activity
+            android:name="com.semaai.agent.activity.newcustomer.CustomerDetailActivity"
+            android:exported="false" />
+        <activity
+            android:name="com.semaai.agent.activity.newcustomer.ConfirmationActivity"
+            android:exported="false" />
+        <activity
+            android:name="com.semaai.agent.activity.newcustomer.CameraGPSActivity"
+            android:exported="true" />
+        <activity
+            android:name="com.semaai.agent.activity.newcustomer.CustomerAddressActivity"
+            android:exported="true" />
+        <activity
+            android:name="com.semaai.agent.activity.newcustomer.CustomerRegistrationActivity"
+            android:exported="true" />
+        <activity
+            android:name="com.semaai.agent.activity.DashboardActivity"
+            android:exported="true" />
+        <activity
+            android:name=".activity.login.StaffLoginActivity"
+            android:exported="false"
+            android:theme="@style/Theme.White" />
+        <activity
+            android:name=".activity.login.SplashScreenActivity"
+            android:exported="true"
+            android:theme="@style/Theme.White">
+            <intent-filter>
+                <action android:name="android.intent.action.MAIN" />
+
+                <category android:name="android.intent.category.LAUNCHER" />
+            </intent-filter>
+        </activity>
+
+        <meta-data
+            android:name="preloaded_fonts"
+            android:resource="@array/preloaded_fonts" />
+        <meta-data
+            android:name="com.google.android.maps.v2.API_KEY"
+            android:value="@string/google_map_key" />
+        <meta-data
+            android:name="com.google.android.gms.version"
+            android:value="@integer/google_play_services_version" />
+
+        <provider
+            android:name="androidx.core.content.FileProvider"
+            android:authorities="com.semaai.agent.provider"
+            android:exported="false"
+            android:grantUriPermissions="true">
+            <meta-data
+                android:name="android.support.FILE_PROVIDER_PATHS"
+                android:resource="@xml/provider_paths" />
+        </provider>
+    </application>
+
+</manifest>

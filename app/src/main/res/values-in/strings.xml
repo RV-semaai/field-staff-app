@@ -1,0 +1,226 @@
+<resources>
+    <string name="appName">Agen Semaai</string>
+
+    <string name="welcome">Selamat datang!</string>
+    <string name="signIn">Sign In</string>
+    <string name="phoneNumber">Nomor Handphone</string>
+    <string name="password">Password</string>
+    <string name="ok">OK</string>
+    <string name="registerNewUser">Pelanggan Baru</string>
+    <string name="province">Provinsi*</string>
+    <string name="district">Kabupaten/Kota*</string>
+    <string name="subDistrict">Kecamatan*</string>
+    <string name="village">Kelurahan/Desa*</string>
+    <string name="postCode">Kode pos</string>
+    <string name="streetName">Nama jalan*</string>
+    <string name="streetName1">nama jalan*</string>
+    <string name="home">Beranda</string>
+    <string name="account">Akun</string>
+    <string name="titleActivityLogin">AktivitasLogin</string>
+    <string name="promptEmail">Surel</string>
+    <string name="promptPassword">Kata sandi</string>
+    <string name="actionSignIn">Login atau Daftar</string>
+    <string name="bambang">Bambang</string>
+    <string name="fieldAgent">Agen Lapangan</string>
+    <string name="newUser">Daftar \nPengguna baru</string>
+    <string name="userDetails">Pelanggan \nyang Ada</string>
+    <string name="existingCustomers">Pelanggan yang Ada</string>
+    <string name="name">Nama*</string>
+    <string name="phone">No. Handphone*</string>
+    <string name="save">SIMPAN</string>
+    <string name="storePhoto">Foto Toko</string>
+    <string name="gpsLocation">Lokasi GPS</string>
+    <string name="done">AKUN PENGGUNA BARU \n TELAH DIBUAT DAN DISETUJUI</string>
+    <string name="acName">Nama</string>
+    <string name="acPhone">No. Handphone</string>
+    <string name="acStreet">Jalan</string>
+    <string name="acEmail">Email</string>
+    <string name="acJobTitle">Pekerjaan</string>
+    <string name="acTeam">Tim</string>
+    <string name="acTeam1">Tim: --</string>
+    <string name="currentPas">Password Saat Ini</string>
+    <string name="newPas">Password Baru</string>
+    <string name="confNewPass">Konfirmasi Password Baru</string>
+    <string name="confirm">KONFIRMASI</string>
+    <string name="msg1">Akun ini\ntidak terdaftar!</string>
+    <string name="msg2">Password salah!</string>
+    <string name="msg3">Nomor ini \n sudah terdaftar!</string>
+    <string name="msg4">Mulai Dengan 08</string>
+    <string name="enterNo">Masukkan Nomor Handphone</string>
+    <string name="enterName">Masukkan Nama</string>
+    <string name="enterPassword">Masukkan Password</string>
+    <string name="logIn">MASUK</string>
+    <string name="group">Kelompok</string>
+    <string name="group1">Kelompok: </string>
+    <string name="review">REVIEW</string>
+    <string name="edit">EDIT</string>
+    <string name="approve">SETUJU</string>
+    <string name="errorMessage">Data tidak ditemukan</string>
+    <string name="userCancelledImageCapture">Pengguna batal menangkap gambar</string>
+    <string name="sorryFailedToCaptureImage">Maaf! Gagal menangkap gambar</string>
+    <string name="pleaseClickPhoto">Harap Klik Foto</string>
+    <string name="registerNewUser2">Pengguna\nBaru</string>
+    <string name="clockInClockOut2">Jam Masuk\nJam Keluar</string>
+    <string name="sessionExpired">Ada yang salah.</string>
+    <string name="selected">Pilih</string>
+    <string name="enter">Masukkan</string>
+
+    //existing customer
+    <string name="myCustomers">Pengguna Saya</string>
+    <string name="otherCustomers">Pengguna Lainnya</string>
+    <string name="sort">Urut Berdasarkan</string>
+    <string name="filter">Filter</string>
+    <string name="nameAz">Nama(A-Z)</string>
+    <string name="nameZa">Nama(Z-A)</string>
+    <string name="profile">Profil</string>
+    <string name="orders">Pesanan</string>
+    <string name="paymentStatus">Status Pembayaran</string>
+    <string name="approved">DISETUJUI</string>
+    <string name="noRecord">Tidak Ada Catatan Ditemukan</string>
+    <string name="backToProfile">Kembali ke Profil</string>
+    <string name="infoEditSave">PERUBAHAN INFORMASI \n PENGGUNA TERSIMPAN</string>
+    <string name="errorMsg">*Mohon lengkapi \n informasi yang dibutuhkan!</string>
+    <string name="searchHint">Cari dengan No.Handphone/Nama/Perusahaan</string>
+    <string name="apply">Terapkan</string>
+    <string name="pleaseSelect">Harap Pilih</string>
+
+    <string name="delivered">Terkirim</string>
+
+    <string name="backPressText">Keluar tanpa menyimpan?</string>
+    <string name="yes">YA</string>
+    <string name="no">TIDAK</string>
+    <string name="AGENT">AGEN</string>
+
+
+    //order
+    <string name="pastOrders">Pesanan Sebelumnya</string>
+    <string name="pastProducts">Produk Sebelumnya</string>
+    <string name="dtNewOld">Tanggal Pemesanan (Paling baru ke Paling lama)</string>
+    <string name="dtOldNew">Tanggal Pemesanan (Paling lama ke Paling baru)</string>
+    <string name="oldNewProduct">Paling lama ke Paling baru</string>
+    <string name="newOldProduct">Paling baru ke Paling lama</string>
+    <string name="high_low">Kuantitas Terjual (Banyak ke Sedikit)</string>
+    <string name="low_high">Kuantitas Terjual (Sedikit ke Banyak)</string>
+    <string name="AtoZ">A ke Z</string>
+    <string name="ZtoA">Z ke A</string>
+    <string name="deliveryStatus">Status Pengiriman</string>
+    <string name="sellerName">Nama Penjual</string>
+    <string name="brand">Merk</string>
+    <string name="category">Kategori</string>
+    <string name="subcategory">Sub-Kategori</string>
+
+    //payment
+    <string name="today">Hari ini</string>
+    <string name="checkStatus">Cek Status</string>
+    <string name="paid">Sudah Dibayar</string>
+    <string name="unpaid">Belum Dibayar</string>
+    <string name="partiallyPaid">Sudah Dibayar Setengah</string>
+    <string name="orderUnderProcess">Pemesanan dalam Proses</string>
+    // past order item detail
+    <string name="date">Tanggal:</string>
+    <string name="InvoiceNumber">Nomor Tagihan:</string>
+    <string name="OrderStatus">Status Pesanan:</string>
+    <string name="SalesPerson">Penjual:</string>
+    <string name="UntaxedAmount">Jumlah Sebelum Pajak</string>
+    <string name="SemaaiPointsRedeemed">Poin Semaai telah ditukar</string>
+    <string name="CouponDiscount">Kupon diskon</string>
+    <string name="Taxes">Pajak</string>
+    <string name="TotalAmount">Jumlah Total:</string>
+    <string name="PaymentMethod">Metode Pembayaran</string>
+    <string name="DeliveryDate">Tanggal pengiriman</string>
+    <string name="PaymentStatus">Status pembayaran:</string>
+    <string name="DeliveryStatus">Status Pengiriman</string>
+
+    <string name="date1">Tanggal :</string>
+    <string name="InvoiceNumber1">Nomor Tagihan :</string>
+    <string name="OrderStatus1">Status Pesanan :</string>
+    <string name="SalesPerson1">Penjual :</string>
+    <string name="TotalAmount1">Jumlah Total</string>
+
+
+    <string name="GPS_msg">GPS anda tidak aktif. Aktifkan?</string>
+    <string name="qty">Jumlah :</string>
+    <string name="stock">Stok </string>
+    <string name="soldBy">Dijual oleh</string>
+    <string name="totalQtySold">Jumlah Total Terjual</string>
+    <string name="lastPurchase">Pembelian Terakhir</string>
+
+
+    <string name="continue1">LANJUTKAN</string>
+    <string name="text">SMS DENGAN PASSWORD LOGIN TERKIRIM!</string>
+    <string name="male">Pria</string>
+    <string name="female">Wanita</string>
+
+    <string name="acAddress">Alamat</string>
+    <string name="acGender">Jenis kelamin</string>
+    <string name="acOther">Other</string>
+    <string name="curNewSame">Password baru sama dengan password lama, mohon ganti password baru.</string>
+    <string name="newConfNotSame">Konfirmasi password baru tidak cocok</string>
+    <string name="currNotMatch">Password salah </string>
+
+    <string name="plzEnterCurr">Mohon Masukkan Password Lama</string>
+    <string name="plzEnterNew">Mohon Masukkan Password Baru</string>
+    <string name="plzEnterConf">Mohon Konfirmasi Password Baru</string>
+    <string name="updateSuccess">Profil Berhasil Diperbarui</string>
+    <string name="passwordChange">Password anda telah diubah</string>
+    <string name="bDate">Tanggal Lahir</string>
+
+    <string name="fillDetails">Harap Lengkapi Detail Anda</string>
+    <string name="clockInClockOut">Clock-in Clock-out</string>
+    <string name="clockIn">Clock-in</string>
+    <string name="clockOut">Clock-out</string>
+    <string name="searchUser">Cari Pengguna</string>
+    <string name="others">Lainnya</string>
+    <string name="succeed">Berhasil</string>
+    <string name="succeedYourLocation">Anda telah berhasil clock-in di</string>
+    <string name="succeedMagClockOut">Anda menghabiskan</string>
+    <string name="ssAt">detik di</string>
+    <string name="mmAt">menit di</string>
+    <string name="hhAt">jam di</string>
+    <string name="searchUserName">Masukkan Nama/Lokasi/Grup</string>
+    <string name="notCompleteDate">Data pelanggan tidak lengkap</string>
+    <string name="timeSpent">Waktu yang telah dihabiskan</string>
+    <string name="changeCustomerName">Ubah Nama Pelanggan</string>
+    <string name="changeCustomer">Ubah Pelanggan</string>
+    <string name="exampleBudi">Contoh: Budi</string>
+    <string name="plsTackImage">Silakan klik foto</string>
+
+
+    <string name="employeeNull">Maaf Anda bukan karyawan.</string>
+
+    // target tracking
+    <string name="targetTracking">Pelacakan Target</string>
+    <string name="myTarget">Target Saya</string>
+    <string name="teamTarget">Target Tim</string>
+    <string name="totalInvoiced">Total Faktur</string>
+    <string name="target">Target:</string>
+    <string name="customersOrdered">Pesanan Pelanggan</string>
+    <string name="newCustomers">Pelanggan Baru</string>
+    <string name="repeatOrderCustomers">Pelanggan Tetap</string>
+    <string name="thisMonth">Bulan Ini</string>
+    <string name="lastMonth">Bulan Lalu</string>
+    <string name="custom">Atur</string>
+    <string name="january">Januari</string>
+    <string name="february">Februari</string>
+    <string name="march">Maret</string>
+    <string name="april">April</string>
+    <string name="may">Mei</string>
+    <string name="june">Juni</string>
+    <string name="july">Juli</string>
+    <string name="august">Agustus</string>
+    <string name="september">September</string>
+    <string name="october">Oktober</string>
+    <string name="november">November</string>
+    <string name="december">Desember</string>
+    <string name="refresh">Perbarui</string>
+
+    <string name="sure_want_to_logout">Yakin ingin keluar? </string>
+    <string name="birthdate">Tanggal lahir</string>
+    <string name="gallery">Galeri</string>
+    <string name="camera">Kamera</string>
+    <string name="logout">Keluar</string>
+    <string name="nogps">Lokasi anda tidak ditemukan!</string>
+
+    ----------------------------- without client confirmation  -------------------------------------------
+
+</resources>

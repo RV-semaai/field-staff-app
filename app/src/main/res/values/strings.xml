@@ -1,0 +1,244 @@
+<resources xmlns:tools="http://schemas.android.com/tools">
+    <string name="appName">Semaai Agent</string>
+
+    <string name="google_map_key" translatable="false">AIzaSyCvJ0aNZ5H7CNv9Zkh6zB_glNya-c4geHw</string>
+
+    <string name="welcome">WELCOME!</string>
+    <string name="signIn">Sign In</string>
+    <string name="phoneNumber">Phone Number</string>
+    <string name="password">Password</string>
+    <string name="ok">OK</string>
+    <string name="registerNewUser">New Customer</string>
+    <string name="province">Province*</string>
+    <string name="district">District*</string>
+    <string name="subDistrict">Sub district*</string>
+    <string name="village">Village*</string>
+    <string name="postCode">Post Code</string>
+    <string name="streetName">Street Name*</string>
+    <string name="streetName1">Street Name*</string>
+    <string name="home">Home</string>
+    <string name="account">Account</string>
+    <string name="titleActivityLogin">LoginActivity</string>
+    <string name="promptEmail">Email</string>
+    <string name="promptPassword">Password</string>
+    <string name="actionSignIn">Sign in or register</string>
+    <string name="bambang">Bambang</string>
+    <string name="fieldAgent">Field Agent</string>
+    <string name="newUser">Register\nNew User</string>
+    <string name="userDetails">Existing\nCustomers</string>
+    <string name="existingCustomers">Existing Customers</string>
+    <string name="name">Name*</string>
+    <string name="phone">Phone*</string>
+    <string name="save">SAVE</string>
+    <string name="storePhoto">Store Photo</string>
+    <string name="gpsLocation">GPS Location</string>
+    <string name="done">NEW CUSTOMER ACCOUNT \nCREATED AND APPROVED</string>
+    <string name="acName">Name</string>
+    <string name="acPhone">Phone</string>
+    <string name="acStreet">Street</string>
+    <string name="acEmail">Email</string>
+    <string name="acJobTitle">Job Title</string>
+    <string name="acTeam">Team</string>
+    <string name="acTeam1">Team: --</string>
+    <string name="currentPas">Current Password</string>
+    <string name="newPas">New Password</string>
+    <string name="confNewPass">Confirm New Password</string>
+    <string name="confirm">CONFIRM</string>
+    <string name="msg1">This account is\nnot registered!</string>
+    <string name="msg2">Wrong password!</string>
+    <string name="msg3">This number is \n already registered!</string>
+    <string name="msg4">Start With 08</string>
+    <string name="enterNo">Enter Phone Number</string>
+    <string name="enterName">Enter Name</string>
+    <string name="enterPassword">Enter Password</string>
+    <string name="logIn">LOGIN</string>
+    <string name="group">Group</string>
+    <string name="group1">Group: </string>
+    <string name="review">REVIEW</string>
+    <string name="edit">EDIT</string>
+    <string name="approve">APPROVE</string>
+    <string name="errorMessage">Data not found</string>
+    <string name="userCancelledImageCapture">User cancelled image capture</string>
+    <string name="sorryFailedToCaptureImage">Sorry! Failed to capture image</string>
+    <string name="pleaseClickPhoto">Please Click Photo</string>
+    <string name="registerNewUser2">New\nCustomer</string>
+    <string name="clockInClockOut2">Clock-In\nClock-Out</string>
+    <string name="sessionExpired">Something went wrong.</string>
+    <string name="wrongMag" translatable="false">Something went wrong.</string>
+    <string name="selected">Select</string>
+    <string name="enter">Enter</string>
+    <string name="pickImageIntentChooserTitle" translatable="false">Select source</string>
+
+
+    //existing customer
+    <string name="myCustomers">My Customers</string>
+    <string name="otherCustomers">Other Customers</string>
+    <string name="sort">Sort by</string>
+    <string name="filter">Filter</string>
+    <string name="nameAz">Name(A-Z)</string>
+    <string name="nameZa">Name(Z-A)</string>
+    <string name="profile">Profile</string>
+    <string name="orders">Orders</string>
+    <string name="paymentStatus">Payment Status</string>
+    <string name="approved">APPROVED</string>
+    <string name="noRecord">No Record Found</string>
+    <string name="backToProfile">Back to Profile</string>
+    <string name="infoEditSave">USER INFORMATION \n EDITS SAVED</string>
+    <string name="errorMsg">*Please complete the \n missing information!</string>
+    <string name="searchHint">Search Mobile / Name / Company</string>
+    <string name="apply">Apply</string>
+    <string name="pleaseSelect">Please Select</string>
+
+    <string name="delivered">Delivered</string>
+
+    <string name="backPressText">Quit without saving?</string>
+    <string name="yes">YES</string>
+    <string name="no">NO</string>
+    <string name="AGENT">AGENT</string>
+
+    //order
+
+    <string name="pastOrders">Past Orders</string>
+    <string name="pastProducts">Past Products</string>
+    <string name="dtNewOld">Order Date (Newest to Oldest)</string>
+    <string name="dtOldNew">Order Date (Oldest to Newest)</string>
+    <string name="oldNewProduct">Oldest to Newest</string>
+    <string name="newOldProduct">Newest to Oldest</string>
+    <string name="high_low">Quantity Sold (High to Low)</string>
+    <string name="low_high">Quantity Sold (Low to High)</string>
+    <string name="AtoZ">A to Z</string>
+    <string name="ZtoA">Z to A</string>
+    <string name="deliveryStatus">Delivery Status</string>
+    <string name="sellerName">Seller Name</string>
+    <string name="brand">Brand</string>
+    <string name="category">Category</string>
+    <string name="subcategory">Sub-Category</string>
+
+
+    //payment
+    <string name="today">Today</string>
+    <string name="checkStatus">Check Status</string>
+    <string name="paid">Paid</string>
+    <string name="unpaid">Unpaid</string>
+    <string name="partiallyPaid">Partially Paid</string>
+    <string name="orderUnderProcess">Orders Under Process</string>
+
+    // past order item detail
+    <string name="date">Date:</string>
+    <string name="InvoiceNumber">Invoice Number:</string>
+    <string name="OrderStatus">Order Status:</string>
+    <string name="SalesPerson">Sales person:</string>
+    <string name="UntaxedAmount">Untaxed Amount</string>
+    <string name="SemaaiPointsRedeemed">Semaai points redeemed</string>
+    <string name="CouponDiscount">Coupon discount</string>
+    <string name="Taxes">Taxes</string>
+    <string name="TotalAmount">Total Amount:</string>
+    <string name="PaymentMethod">Payment Method</string>
+    <string name="DeliveryDate">Delivery date</string>
+    <string name="PaymentStatus">Payment status:</string>
+    <string name="DeliveryStatus">Delivery Status</string>
+
+
+    <string name="date1">Date :</string>
+    <string name="InvoiceNumber1">Invoice Number :</string>
+    <string name="OrderStatus1">Order Status :</string>
+    <string name="SalesPerson1">Sales person :</string>
+    <string name="TotalAmount1">Total Amount</string>
+
+
+    <string name="GPS_msg">Your GPS seems to be disabled, do you want to enable it?</string>
+    <string name="qty">Qty :</string>
+    <string name="stock">Stock </string>
+    <string name="soldBy">Sold by</string>
+    <string name="totalQtySold">Total Qty Sold</string>
+    <string name="lastPurchase">Last Purchase</string>
+
+
+    <string name="continue1">CONTINUE</string>
+    <string name="text">SMS WITH LOGIN PASSWORD SENT!</string>
+    <string name="male">Male</string>
+    <string name="female">Female</string>
+
+    <string name="acAddress">Address</string>
+    <string name="acGender">Gender</string>
+    <string name="acOther">Other</string>
+    <string name="curNewSame">Your current password and new password are same, Please change your new password</string>
+    <string name="newConfNotSame">Your Confirm new password does not match </string>
+    <string name="currNotMatch">Your current password does not match</string>
+
+    <string name="plzEnterCurr">Please Enter Current Password</string>
+    <string name="plzEnterNew">Please Enter New Password</string>
+    <string name="plzEnterConf">Please Enter Confirm New Password</string>
+    <string name="updateSuccess">Your profile updated successfully.</string>
+    <string name="passwordChange">Your password has been changed</string>
+    <string name="bDate">Date of Birth</string>
+
+    <string name="fillDetails">Please Fill Your Details</string>
+    <string name="clockInClockOut">Clock-in Clock-out</string>
+    <string name="clockIn">Clock-in</string>
+    <string name="clockOut">Clock-out</string>
+    <string name="searchUser">Search User</string>
+    <string name="others">Others</string>
+    <string name="succeed">Succeed</string>
+
+    <string name="succeedYourLocation">You have successfully clocked-in at</string>
+
+    <string name="succeedMagClockOut">You’ve spent</string>
+    <string name="ssAt">seconds at</string>
+    <string name="mmAt">minutes at</string>
+    <string name="hhAt">hours at</string>
+    <string name="searchUserName">Input Name/Location/Group</string>
+    <string name="notCompleteDate">This customer data is not complete</string>
+    <string name="timeSpent">Time Spent</string>
+    <string name="changeCustomerName">Change Customer Name</string>
+    <string name="changeCustomer">Change Customer</string>
+    <string name="exampleBudi">Example: Budi</string>
+    <string name="plsTackImage">Please click a photo</string>
+
+
+    <string name="newCustomer" translatable="false">new-customer</string>
+    <string name="existingCustomer" translatable="false">existing-customer</string>
+    <string name="otherCustomer" translatable="false">other-customer</string>
+    <string name="sample" translatable="false">sample</string>
+
+
+    <string name="employeeNull">Sorry you are not employee.</string>
+
+    // target tracking
+    <string name="targetTracking">Target Tracking</string>
+    <string name="myTarget">My Target</string>
+    <string name="teamTarget">Team Target</string>
+    <string name="totalInvoiced">Total Invoiced</string>
+    <string name="target">Target:</string>
+    <string name="customersOrdered">Customers Ordered</string>
+    <string name="newCustomers">New Customers</string>
+    <string name="repeatOrderCustomers">Repeat Order Customers</string>
+    <string name="thisMonth">This Month</string>
+    <string name="lastMonth">Last Month</string>
+    <string name="custom">Custom</string>
+    <string name="january">January</string>
+    <string name="february">February</string>
+    <string name="march">March</string>
+    <string name="april">April</string>
+    <string name="may">May</string>
+    <string name="june">June</string>
+    <string name="july">July</string>
+    <string name="august">August</string>
+    <string name="september">September</string>
+    <string name="october">October</string>
+    <string name="november">November</string>
+    <string name="december">December</string>
+    <string name="refresh">Refresh</string>
+
+    <string name="sure_want_to_logout">Sure want to logout?</string>
+    <string name="birthdate">Birth Date</string>
+    <string name="gallery">Gallery</string>
+    <string name="camera">Camera</string>
+    <string name="logout">LOGOUT</string>
+    <string name="nogps">Your location is not found!</string>
+
+
+    ----------------------------- without client confirmation -------------------------------------------
+
+
+</resources>

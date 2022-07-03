@@ -1,0 +1,636 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    xmlns:app="http://schemas.android.com/apk/res-auto">
+
+  <data>
+    <variable
+        name="TotalInvoicedViewModel"
+        type="com.semaai.agent.viewmodel.targettracking.TotalInvoicedViewModel" />
+
+  </data>
+
+  <androidx.constraintlayout.widget.ConstraintLayout
+      android:layout_width="match_parent"
+      android:layout_height="match_parent"
+      android:background="@color/white"
+      tools:context=".activity.targettracking.TotalInvoicedActivity">
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:id="@+id/cv_cnst"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        app:layout_constraintTop_toTopOf="parent">
+
+      <include
+          android:id="@+id/rl_register"
+          layout="@layout/label_common_total_invoiced">
+
+      </include>
+
+    </androidx.constraintlayout.widget.ConstraintLayout>
+
+    <ScrollView
+        android:id="@+id/sv"
+        android:layout_width="match_parent"
+        android:layout_height="0dp"
+        android:layout_marginTop="@dimen/_10sdp"
+        app:layout_constraintTop_toBottomOf="@+id/cv_cnst"
+        app:layout_constraintBottom_toTopOf="@+id/cm_bottom">
+
+      <androidx.constraintlayout.widget.ConstraintLayout
+          android:id="@+id/cll1"
+          android:layout_width="match_parent"
+          android:layout_height="match_parent"
+          android:paddingBottom="100dp">
+
+
+        <androidx.constraintlayout.widget.ConstraintLayout
+            android:id="@+id/cnst_circular1"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            app:layout_constraintLeft_toLeftOf="parent"
+            app:layout_constraintRight_toRightOf="parent"
+            app:layout_constraintTop_toTopOf="parent">
+
+          <androidx.cardview.widget.CardView
+              android:id="@+id/cv_circular1"
+              android:layout_width="match_parent"
+              android:layout_height="wrap_content"
+              android:layout_marginHorizontal="@dimen/_25sdp"
+              android:layout_marginTop="@dimen/_5sdp"
+              android:layout_marginBottom="@dimen/_3sdp"
+              app:cardCornerRadius="@dimen/_6sdp"
+              app:cardBackgroundColor="@color/white"
+              app:cardElevation="@dimen/_6sdp"
+              app:layout_constraintLeft_toLeftOf="parent"
+              app:layout_constraintRight_toRightOf="parent"
+              app:layout_constraintTop_toTopOf="parent"
+              app:layout_constraintBottom_toBottomOf="parent">
+
+            <androidx.constraintlayout.widget.ConstraintLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content">
+
+
+              <com.google.android.material.progressindicator.CircularProgressIndicator
+                  android:id="@+id/circular_progress"
+                  android:layout_width="wrap_content"
+                  android:layout_height="wrap_content"
+                  android:layout_marginHorizontal="@dimen/_40sdp"
+                  android:indeterminate="false"
+                  android:layout_marginVertical="14sp"
+                  app:trackThickness="@dimen/_12sdp"
+                  app:indicatorSize="@dimen/_180sdp"
+                  app:indicatorColor="@color/teal_200"
+                  app:indicatorDirectionCircular="counterclockwise"
+                  app:trackColor="@color/circular_totalInvoiceTrack"
+                  app:layout_constraintLeft_toLeftOf="parent"
+                  app:layout_constraintRight_toRightOf="parent"
+                  app:layout_constraintTop_toTopOf="parent">
+
+              </com.google.android.material.progressindicator.CircularProgressIndicator>
+
+              <TextView
+                  android:id="@+id/tvProgressDone"
+                  android:layout_width="wrap_content"
+                  android:layout_height="wrap_content"
+                  android:textSize="@dimen/_17sdp"
+                  android:textColor="@color/black"
+                  android:text="--"
+                  android:layout_marginLeft="@dimen/_15sdp"
+                  android:layout_marginTop="@dimen/_38sdp"
+                  android:fontFamily="@font/open_sans"
+                  app:layout_constraintLeft_toLeftOf="parent"
+                  app:layout_constraintTop_toTopOf="parent"
+                  app:layout_constraintRight_toLeftOf="@id/circular_progress">
+              </TextView>
+
+              <TextView
+                  android:id="@+id/tvProgressNotDone"
+                  android:layout_width="wrap_content"
+                  android:layout_height="wrap_content"
+                  android:textSize="@dimen/_17sdp"
+                  android:textColor="@color/black"
+                  android:layout_marginTop="@dimen/_105sdp"
+                  android:text="0%"
+                  app:layout_constraintRight_toRightOf="parent"
+                  android:layout_marginEnd="@dimen/_18sdp"
+                  android:fontFamily="@font/open_sans"
+                  app:layout_constraintBottom_toBottomOf="parent"
+                  app:layout_constraintTop_toTopOf="parent">
+              </TextView>
+
+              <TextView
+                  android:id="@+id/tv_target"
+                  android:layout_width="wrap_content"
+                  android:layout_height="wrap_content"
+                  android:layout_marginTop="@dimen/_12sdp"
+                  android:layout_marginBottom="@dimen/_15sdp"
+                  android:fontFamily="@font/open_sans"
+                  android:text="@string/target"
+                  android:textColor="@color/purple_500"
+                  android:textSize="@dimen/_18sdp"
+                  android:singleLine="true"
+                  android:maxLines="1"
+                  app:layout_constraintBottom_toBottomOf="parent"
+                  app:layout_constraintHorizontal_bias="0.493"
+                  app:layout_constraintLeft_toLeftOf="parent"
+                  app:layout_constraintRight_toRightOf="parent"
+                  app:layout_constraintTop_toBottomOf="@id/circular_progress"
+                  app:layout_constraintVertical_bias="1.0"/>
+
+              <TextView
+                  android:id="@+id/tv_current"
+                  android:layout_width="wrap_content"
+                  android:layout_height="wrap_content"
+                  android:text="--"
+                  android:textColor="@color/purple_500"
+                  android:textSize="@dimen/_16sdp"
+                  android:fontFamily="@font/open_sans"
+                  app:layout_constraintLeft_toLeftOf="@+id/circular_progress"
+                  app:layout_constraintRight_toRightOf="@+id/circular_progress"
+                  app:layout_constraintTop_toTopOf="@+id/circular_progress"
+                  app:layout_constraintBottom_toBottomOf="@+id/circular_progress">
+
+              </TextView>
+            </androidx.constraintlayout.widget.ConstraintLayout>
+          </androidx.cardview.widget.CardView>
+
+        </androidx.constraintlayout.widget.ConstraintLayout>
+
+
+        <androidx.constraintlayout.widget.ConstraintLayout
+            android:id="@+id/cnst_totalInvoiced11"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            app:layout_constraintTop_toBottomOf="@id/cnst_circular1">
+
+          <androidx.cardview.widget.CardView
+              android:id="@+id/cv_totalInvoiced11"
+              android:layout_width="match_parent"
+              android:layout_height="wrap_content"
+              app:cardCornerRadius="@dimen/_6sdp"
+              app:cardElevation="@dimen/_6sdp"
+              android:layout_marginTop="@dimen/_9sdp"
+              android:layout_marginBottom="@dimen/_3sdp"
+              android:layout_marginHorizontal="@dimen/_25sdp"
+              app:layout_constraintLeft_toLeftOf="parent"
+              app:layout_constraintRight_toRightOf="parent"
+              app:layout_constraintTop_toTopOf="parent"
+              app:layout_constraintBottom_toBottomOf="parent"
+              android:orientation="vertical">
+
+            <androidx.constraintlayout.widget.ConstraintLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content">
+
+              <androidx.constraintlayout.widget.ConstraintLayout
+                  android:id="@+id/cnst111"
+                  android:layout_width="match_parent"
+                  android:layout_height="wrap_content"
+                  app:layout_constraintLeft_toLeftOf="parent"
+                  app:layout_constraintRight_toRightOf="parent"
+                  app:layout_constraintTop_toTopOf="parent">
+
+                <TextView
+                    android:id="@+id/tvItemTarget"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="@string/totalInvoiced"
+                    android:layout_marginStart="@dimen/_9sdp"
+                    android:layout_marginBottom="@dimen/_10sdp"
+                    android:fontFamily="@font/open_sans"
+                    android:textSize="@dimen/_16sdp"
+                    android:textColor="@color/black"
+                    android:layout_marginTop="@dimen/_10sdp"
+                    app:layout_constraintLeft_toLeftOf="parent"
+                    app:layout_constraintTop_toTopOf="parent"
+                    app:layout_constraintBottom_toBottomOf="parent"
+                    >
+                </TextView>
+
+                <ImageView
+                    android:id="@+id/iv_totalInvoicedArrowDown"
+                    android:layout_width="@dimen/_18sdp"
+                    android:layout_height="@dimen/_18sdp"
+                    android:src="@drawable/ic_vector_down"
+                    android:layout_marginTop="@dimen/_10sdp"
+                    app:layout_constraintBottom_toBottomOf="parent"
+                    app:layout_constraintRight_toRightOf="parent"
+                    app:layout_constraintTop_toTopOf="parent"
+                    android:layout_marginEnd="@dimen/_15sdp"/>
+
+                <ImageView
+                    android:id="@+id/iv_totalInvoicedArrowUp"
+                    android:layout_width="@dimen/_18sdp"
+                    android:layout_height="@dimen/_18sdp"
+                    android:src="@drawable/ic_vector_up"
+                    android:visibility="gone"
+                    android:layout_marginTop="@dimen/_10sdp"
+                    app:layout_constraintBottom_toBottomOf="parent"
+                    app:layout_constraintRight_toRightOf="parent"
+                    app:layout_constraintTop_toTopOf="parent"
+                    android:layout_marginEnd="@dimen/_15sdp"/>
+
+              </androidx.constraintlayout.widget.ConstraintLayout>
+
+              <androidx.recyclerview.widget.RecyclerView
+                  android:id="@+id/rv_totalInvoicedCard"
+                  android:layout_width="match_parent"
+                  android:layout_height="wrap_content"
+                  android:visibility="gone"
+                  android:nestedScrollingEnabled="true"
+                  app:layout_constraintLeft_toLeftOf="parent"
+                  app:layout_constraintRight_toRightOf="parent"
+                  app:layout_constraintTop_toBottomOf="@id/cnst111">
+
+              </androidx.recyclerview.widget.RecyclerView>
+            </androidx.constraintlayout.widget.ConstraintLayout>
+
+          </androidx.cardview.widget.CardView>
+
+        </androidx.constraintlayout.widget.ConstraintLayout>
+
+<!--        <androidx.constraintlayout.widget.ConstraintLayout-->
+<!--            android:layout_width="match_parent"-->
+<!--            android:layout_height="wrap_content"-->
+<!--            app:layout_constraintTop_toBottomOf="@id/cnst_circular1">-->
+
+<!--          <androidx.cardview.widget.CardView-->
+<!--              android:id="@+id/cv_123"-->
+<!--              android:layout_width="match_parent"-->
+<!--              android:layout_height="wrap_content"-->
+<!--              app:cardElevation="@dimen/_6sdp"-->
+<!--              android:visibility="gone"-->
+<!--              android:layout_marginTop="@dimen/_9sdp"-->
+<!--              app:cardCornerRadius="@dimen/_6sdp"-->
+<!--              android:layout_marginHorizontal="@dimen/_25sdp"-->
+<!--              app:layout_constraintLeft_toLeftOf="parent"-->
+<!--              app:layout_constraintRight_toRightOf="parent"-->
+<!--              app:layout_constraintTop_toTopOf="parent"-->
+<!--              >-->
+
+
+<!--            <LinearLayout-->
+<!--                android:layout_width="match_parent"-->
+<!--                android:orientation="vertical"-->
+<!--                android:layout_marginBottom="@dimen/_5sdp"-->
+<!--                android:layout_height="wrap_content">-->
+
+<!--              <androidx.constraintlayout.widget.ConstraintLayout-->
+<!--                  android:layout_width="match_parent"-->
+<!--                  android:layout_height="wrap_content">-->
+
+<!--                <TextView-->
+<!--                    android:layout_width="wrap_content"-->
+<!--                    android:layout_height="wrap_content"-->
+<!--                    android:text="@string/total_invoiced"-->
+<!--                    android:textColor="@color/black"-->
+<!--                    android:textSize="@dimen/_16sdp"-->
+<!--                    android:fontFamily="@font/open_sans"-->
+<!--                    android:layout_marginStart="@dimen/_9sdp"-->
+<!--                    app:layout_constraintTop_toTopOf="parent"-->
+<!--                    app:layout_constraintLeft_toLeftOf="parent"-->
+<!--                    android:layout_marginTop="@dimen/_10sdp"-->
+<!--                    app:layout_constraintBottom_toBottomOf="parent"-->
+<!--                    android:layout_marginBottom="@dimen/_10sdp">-->
+
+<!--                </TextView>-->
+
+<!--                <ImageView-->
+<!--                    android:layout_width="@dimen/_18sdp"-->
+<!--                    android:layout_height="@dimen/_18sdp"-->
+<!--                    android:src="@drawable/ic_vector_up"-->
+<!--                    app:layout_constraintTop_toTopOf="parent"-->
+<!--                    app:layout_constraintRight_toRightOf="parent"-->
+<!--                    app:layout_constraintBottom_toBottomOf="parent"-->
+<!--                    android:layout_marginTop="@dimen/_10sdp"-->
+<!--                    android:layout_marginEnd="@dimen/_15sdp">-->
+
+<!--                </ImageView>-->
+<!--              </androidx.constraintlayout.widget.ConstraintLayout>-->
+
+<!--              <ImageView-->
+<!--                  android:layout_width="match_parent"-->
+<!--                  android:layout_height="@dimen/_10sdp"-->
+<!--                  android:src="@drawable/ic_bar_my_target"-->
+<!--                  android:layout_marginTop="@dimen/_5sdp"-->
+<!--                  android:layout_marginHorizontal="@dimen/_11sdp">-->
+<!--              </ImageView>-->
+<!--              <TextView-->
+<!--                  android:id="@+id/tv_thisMonthInvoiced"-->
+<!--                  android:layout_width="wrap_content"-->
+<!--                  android:layout_height="wrap_content"-->
+<!--                  android:textColor="@color/button_bg"-->
+<!--                  android:fontFamily="@font/open_sans"-->
+<!--                  android:layout_marginStart="@dimen/_9sdp"-->
+<!--                  android:layout_marginTop="@dimen/_10sdp"-->
+<!--                  android:text="@string/customers_ordered"-->
+<!--                  android:textSize="@dimen/_16sdp">-->
+
+<!--              </TextView>-->
+<!--              <ImageView-->
+<!--                  android:layout_width="match_parent"-->
+<!--                  android:layout_height="@dimen/_10sdp"-->
+<!--                  android:src="@drawable/ic_bar_my_target"-->
+<!--                  android:layout_marginTop="@dimen/_10sdp"-->
+<!--                  android:layout_marginHorizontal="@dimen/_11sdp">-->
+<!--              </ImageView>-->
+<!--              <TextView-->
+<!--                  android:layout_width="wrap_content"-->
+<!--                  android:layout_height="wrap_content"-->
+<!--                  android:textColor="@color/button_bg"-->
+<!--                  android:fontFamily="@font/open_sans"-->
+<!--                  android:layout_marginStart="@dimen/_9sdp"-->
+<!--                  android:layout_marginTop="@dimen/_10sdp"-->
+<!--                  android:text="@string/new_customers"-->
+<!--                  android:textSize="@dimen/_16sdp">-->
+
+<!--              </TextView>-->
+<!--              <ImageView-->
+<!--                  android:layout_width="match_parent"-->
+<!--                  android:layout_height="@dimen/_10sdp"-->
+<!--                  android:src="@drawable/ic_bar_my_target"-->
+<!--                  android:layout_marginTop="@dimen/_10sdp"-->
+<!--                  android:layout_marginHorizontal="@dimen/_11sdp">-->
+<!--              </ImageView>-->
+<!--              <TextView-->
+<!--                  android:layout_width="wrap_content"-->
+<!--                  android:layout_height="wrap_content"-->
+<!--                  android:textColor="@color/button_bg"-->
+<!--                  android:fontFamily="@font/open_sans"-->
+<!--                  android:layout_marginStart="@dimen/_9sdp"-->
+<!--                  android:layout_marginTop="@dimen/_10sdp"-->
+<!--                  android:text="@string/repeat_order_customers"-->
+<!--                  android:layout_marginBottom="@dimen/_10sdp"-->
+<!--                  android:textSize="@dimen/_16sdp">-->
+
+<!--              </TextView>-->
+
+<!--            </LinearLayout>-->
+
+
+<!--          </androidx.cardview.widget.CardView>-->
+
+<!--        </androidx.constraintlayout.widget.ConstraintLayout>-->
+
+        <androidx.constraintlayout.widget.ConstraintLayout
+            android:id="@+id/cnstt_monthYear"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            app:layout_constraintTop_toBottomOf="@+id/cnst_totalInvoiced11">
+
+          <androidx.cardview.widget.CardView
+              android:id="@+id/cv_monthYear"
+              android:layout_width="match_parent"
+              android:layout_height="wrap_content"
+              app:cardCornerRadius="@dimen/_6sdp"
+              app:cardElevation="@dimen/_6sdp"
+              android:layout_marginTop="@dimen/_6sdp"
+              android:layout_marginBottom="@dimen/_3sdp"
+              android:layout_marginHorizontal="@dimen/_25sdp"
+              app:layout_constraintLeft_toLeftOf="parent"
+              app:layout_constraintRight_toRightOf="parent"
+              app:layout_constraintTop_toTopOf="parent"
+              app:layout_constraintBottom_toBottomOf="parent"
+              >
+
+
+            <androidx.constraintlayout.widget.ConstraintLayout
+                android:id="@+id/cnstdate"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content">
+
+              <androidx.constraintlayout.widget.ConstraintLayout
+                  android:id="@+id/cnst_monthYear"
+                  android:layout_width="match_parent"
+                  android:layout_height="@dimen/_44sdp"
+                  app:layout_constraintLeft_toLeftOf="parent"
+                  app:layout_constraintRight_toRightOf="parent"
+                  app:layout_constraintTop_toTopOf="parent">
+
+                <TextView
+                    android:id="@+id/tv_monthYear"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="@string/thisMonth"
+                    android:layout_marginStart="@dimen/_9sdp"
+                    android:fontFamily="@font/open_sans"
+                    android:textSize="@dimen/_16sdp"
+                    android:textColor="@color/black"
+                    app:layout_constraintLeft_toLeftOf="parent"
+                    app:layout_constraintTop_toTopOf="parent"
+                    app:layout_constraintBottom_toBottomOf="parent">
+                </TextView>
+
+                <ImageView
+                    android:id="@+id/iv_monthYearArrowDown"
+                    android:layout_width="@dimen/_18sdp"
+                    android:layout_height="@dimen/_18sdp"
+                    android:src="@drawable/ic_vector_down"
+                    app:layout_constraintRight_toRightOf="parent"
+                    app:layout_constraintBottom_toBottomOf="parent"
+                    app:layout_constraintTop_toTopOf="parent"
+                    android:layout_marginEnd="@dimen/_15sdp">
+
+                </ImageView>
+
+                <ImageView
+                    android:id="@+id/iv_monthYearArrowUp"
+                    android:layout_width="@dimen/_18sdp"
+                    android:layout_height="@dimen/_18sdp"
+                    android:src="@drawable/ic_vector_up"
+                    android:visibility="gone"
+                    app:layout_constraintRight_toRightOf="parent"
+                    app:layout_constraintBottom_toBottomOf="parent"
+                    app:layout_constraintTop_toTopOf="parent"
+                    android:layout_marginEnd="@dimen/_15sdp">
+
+                </ImageView>
+
+              </androidx.constraintlayout.widget.ConstraintLayout>
+
+              <LinearLayout
+                  android:id="@+id/linear_monthYearInvoiced"
+                  android:layout_width="match_parent"
+                  android:layout_height="match_parent"
+                  android:orientation="vertical"
+                  android:visibility="gone"
+                  app:layout_constraintTop_toBottomOf="@id/cnst_monthYear">
+
+                <ImageView
+                    android:id="@+id/barline0"
+                    android:layout_width="match_parent"
+                    android:layout_marginTop="@dimen/_2sdp"
+                    android:layout_height="@dimen/_10sdp"
+                    android:layout_marginHorizontal="@dimen/_10sdp"
+                    android:src="@drawable/ic_bar_my_target">
+
+                </ImageView>
+
+                <TextView
+                    android:id="@+id/tv_ThisMonth"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:textSize="@dimen/_17sdp"
+                    android:layout_marginTop="@dimen/_9sdp"
+                    android:textColor="@color/button_bg"
+                    android:fontFamily="@font/open_sans"
+                    android:text="@string/thisMonth"
+                    android:layout_marginStart="@dimen/_8sdp">
+
+                </TextView>
+
+                <ImageView
+                    android:id="@+id/barline1"
+                    android:layout_width="match_parent"
+                    android:layout_marginTop="@dimen/_8sdp"
+                    android:layout_height="@dimen/_10sdp"
+                    android:layout_marginHorizontal="@dimen/_10sdp"
+                    android:src="@drawable/ic_bar_my_target">
+
+                </ImageView>
+
+                <TextView
+                    android:id="@+id/tv_LastMonth"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:textSize="@dimen/_17sdp"
+                    android:layout_marginTop="@dimen/_9sdp"
+                    android:textColor="@color/button_bg"
+                    android:fontFamily="@font/open_sans"
+                    android:text="@string/lastMonth"
+                    android:layout_marginStart="@dimen/_8sdp">
+
+                </TextView>
+
+                <ImageView
+                    android:id="@+id/barline2"
+                    android:layout_width="match_parent"
+                    android:layout_height="@dimen/_10sdp"
+                    android:layout_marginTop="@dimen/_8sdp"
+                    android:layout_marginHorizontal="@dimen/_10sdp"
+                    android:src="@drawable/ic_bar_my_target">
+
+                </ImageView>
+
+
+                <androidx.constraintlayout.widget.ConstraintLayout
+                    android:id="@+id/cnst7"
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent">
+
+                  <TextView
+                      android:id="@+id/tv_customDate"
+                      android:layout_width="match_parent"
+                      android:layout_height="wrap_content"
+                      android:textSize="@dimen/_17sdp"
+                      android:layout_marginTop="@dimen/_9sdp"
+                      android:textColor="@color/button_bg"
+                      android:fontFamily="@font/open_sans"
+                      android:text="@string/custom"
+                      android:layout_marginStart="@dimen/_8sdp"
+                      app:layout_constraintLeft_toLeftOf="parent"
+                      app:layout_constraintTop_toTopOf="parent"
+                      app:layout_constraintBottom_toBottomOf="parent"
+                      android:layout_marginBottom="@dimen/_15sdp">
+
+                  </TextView>
+
+                </androidx.constraintlayout.widget.ConstraintLayout>
+
+              </LinearLayout>
+
+
+
+            </androidx.constraintlayout.widget.ConstraintLayout>
+
+          </androidx.cardview.widget.CardView>
+
+        </androidx.constraintlayout.widget.ConstraintLayout>
+
+        <androidx.cardview.widget.CardView
+            android:id="@+id/cv_custom"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            app:cardElevation="@dimen/_5sdp"
+            app:cardCornerRadius="@dimen/_5sdp"
+            android:visibility="invisible"
+            android:layout_marginBottom="@dimen/_20sdp"
+            android:layout_marginHorizontal="@dimen/_27sdp"
+            app:layout_constraintBottom_toTopOf="@+id/cnstcnst">
+
+          <include
+              android:id="@+id/commom_month_year"
+              layout="@layout/layout_common_month">
+
+          </include>
+        </androidx.cardview.widget.CardView>
+
+
+        <androidx.constraintlayout.widget.ConstraintLayout
+            android:id="@+id/cnstcnst"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="@dimen/_9sdp"
+            app:layout_constraintTop_toBottomOf="@+id/cnstt_monthYear"
+            app:layout_constraintLeft_toLeftOf="parent"
+            app:layout_constraintRight_toRightOf="parent"
+            android:layout_marginHorizontal="@dimen/_25sdp">
+
+          <TextView
+              android:id="@+id/tv_date_month"
+              android:layout_width="wrap_content"
+              android:layout_height="wrap_content"
+              android:textColor="@color/black"
+              android:fontFamily="@font/open_sans"
+              android:text="5 May 2022; 12:00:00"
+              android:textSize="@dimen/_15sdp"
+              app:layout_constraintTop_toTopOf="parent"
+              app:layout_constraintBottom_toBottomOf="parent"
+              app:layout_constraintLeft_toLeftOf="parent">
+
+          </TextView>
+
+          <TextView
+              android:id="@+id/tv_refreshInvoice"
+              android:layout_width="wrap_content"
+              android:layout_height="wrap_content"
+              android:fontFamily="@font/open_sans"
+              android:text="@string/refresh"
+              android:textColor="@color/black"
+              android:textSize="@dimen/_15sdp"
+              android:layout_marginEnd="@dimen/_4sdp"
+              app:layout_constraintBottom_toBottomOf="parent"
+              app:layout_constraintRight_toLeftOf="@id/ivRefresh"
+              app:layout_constraintTop_toTopOf="parent">
+
+          </TextView>
+
+          <ImageView
+              android:id="@+id/ivRefresh"
+              android:layout_width="@dimen/_20sdp"
+              android:layout_height="@dimen/_20sdp"
+              android:src="@drawable/ic_refresh"
+              android:layout_marginEnd="1dp"
+              app:layout_constraintRight_toRightOf="parent"
+              app:layout_constraintTop_toTopOf="parent" />
+
+        </androidx.constraintlayout.widget.ConstraintLayout>
+
+
+      </androidx.constraintlayout.widget.ConstraintLayout>
+
+
+    </ScrollView>
+
+
+    <include
+        android:id="@+id/cm_bottom"
+        layout="@layout/bottom_menu"
+        app:layout_constraintBottom_toBottomOf="parent" />
+  </androidx.constraintlayout.widget.ConstraintLayout>
+</layout>
+
+
