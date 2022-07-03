@@ -77,7 +77,7 @@ jobs:
     - uses: actions/upload-artifact@v3
       with:
         name: apk
-        path: /home/runner/work/field-staff-app/field-staff-app/app
+        path: /home/runner/work/field-staff-app/field-staff-app/app/build/outputs
 
 
     - name: dir0
