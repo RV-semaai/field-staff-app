@@ -49,41 +49,13 @@ jobs:
         distribution: 'temurin'
         cache: gradle
 
-# #send notification about the branch being used
-#     - name: Slack Notification
-#       uses: act10ns/slack@v1
-#       with: 
-#         status: ${{ job.status }}
-#         channel: '#notif-jenkins'
-#         message: The branch ${{github.event.inputs.branch}} is being used for building the artifact.
-#       if: always()  
-
-# #Send notification about the build variant that you are using
-#     - name: Slack Notification
-#       uses: act10ns/slack@v1
-#       with: 
-#         status: ${{ job.status }}
-#         channel: '#notif-jenkins'
-#         message: The build variant ${{ github.event.inputs.build_variant}} is being used for building the artifact.
-#       if: always()  
 
 
     - name: Grant execute permission for gradlew
       run: chmod +x gradlew
-  
 
-# #Send notification that the build process is starting
-#     - name: Slack Notification
-#       uses: act10ns/slack@v1
-#       with: 
-#         status: starting
-#         channel: '#notif-jenkins'
-#         message: Building the app.
-#       if: always()
-
-
-    - name: dir1
-      run: ls buildSrc
+    # - name: dir1
+    #   run: ls buildSrc
 
 
     - name: dir2
@@ -99,14 +71,7 @@ jobs:
       run: ./gradlew assemble${{ github.event.inputs.build_variant}}
 
 
-# #send notification the build process is complete
-#     - name: Slack Notification
-#       uses: act10ns/slack@v1
-#       with: 
-#         status: starting
-#         channel: '#notif-jenkins'
-#         message: Build is complete, Uploading the artifact
-#       if: always()
+
 
 #upload the artifact
     - uses: actions/upload-artifact@v3
@@ -114,14 +79,7 @@ jobs:
         name: apk
         path: /home/runner/work/field-staff-app/field-staff-app/appMarketplace/build/outputs/
 
-# #send notification the upload is complete
-#     - name: Slack Notification
-#       uses: act10ns/slack@v1
-#       with: 
-#         status: starting
-#         channel: '#notif-jenkins'
-#         message: uploaded the artifact.
-#       if: always()
+
 
 
     - name: dir1
